@@ -13,7 +13,7 @@ if ((torch.cuda.is_available() and CUDA_HOME is not None)
         or (os.getenv('FORCE_CUDA', '0') == '1')):
     device = 'cuda'
 else:
-    device = 'cpu'
+    device = 'cuda'
 
 sources = [os.path.join('torchsparse', 'backend', f'pybind_{device}.cpp')]
 for fpath in glob.glob(os.path.join('torchsparse', 'backend', '**', '*')):
